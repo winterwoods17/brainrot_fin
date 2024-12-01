@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameON</title>
+    <link rel="icon" href="images/gameon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+HR+Lijeva:wght@100..400&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        
+        <a href="https://brainrot-gi-game.netlify.app/" target="_blank">
+            <button id="2">PLAY GUESS</button>
+        </a>
+        
+        <a href="https://sequence-it.netlify.app/" target="_blank">
+            <button id="1">PLAY SEQUENCE</button>
+        </a>
+        
+        <button id="music-toggle" onclick="toggleAudio()">Start Music</button>
+    </div>
+
+    <!-- Audio tag, but initially paused -->
+    <audio id="background-music" loop>
+        <source src="images/mixkit-game-level-music-689.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Function to toggle music play/pause
+        function toggleAudio() {
+            var audio = document.getElementById('background-music');
+            var button = document.getElementById('music-toggle');
+
+            if (audio.paused) {
+                audio.play(); // Start the music
+                button.textContent = 'Stop Music'; // Change button text to 'Stop Music'
+            } else {
+                audio.pause(); // Stop the music
+                audio.currentTime = 0; // Reset the audio to the beginning
+                button.textContent = 'Start Music'; // Change button text back to 'Start Music'
+            }
+        }
+    </script>
+</body>
+
+</html>
+
